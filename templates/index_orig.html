@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRNU è®¾å¤æçº¹æº¯æºç³»ç»</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- å°é¢é¡µé¢ -->
+    <div id="coverPage" class="cover-page">
+        <!-- èæ¯å¾çè½®æ­ -->
+        <div class="slideshow-container">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1920&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80')"></div>
+        </div>
+
+        <!-- é®ç½©å±?-->
+        <div class="cover-overlay"></div>
+
+        <!-- å°é¢åå®¹ -->
+        <div class="cover-content">
+            <!-- å·¦ä¾§ï¼æ é¢ãæè¿°ãç¹æ?-->
+            <div class="cover-left">
+                <div class="cover-logo">
+                    <svg viewBox="0 0 120 120" width="120" height="120">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="10" y="10" width="100" height="100" rx="20" fill="none" stroke="url(#logoGradient)" stroke-width="3"/>
+                        <circle cx="60" cy="45" r="12" fill="none" stroke="url(#logoGradient)" stroke-width="2.5"/>
+                        <path d="M25 75 Q35 65 45 75 Q55 85 65 75 Q75 65 85 75 Q95 85 95 75" fill="none" stroke="url(#logoGradient)" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="35" cy="35" r="3" fill="url(#logoGradient)"/>
+                        <circle cx="85" cy="35" r="3" fill="url(#logoGradient)"/>
+                        <circle cx="35" cy="85" r="3" fill="url(#logoGradient)"/>
+                        <circle cx="85" cy="85" r="3" fill="url(#logoGradient)"/>
+                    </svg>
+                </div>
+
+                <h1 class="cover-title">PRNU è®¾å¤æçº¹æº¯æºç³»ç»</h1>
+                <p class="cover-subtitle">Photo Response Non-Uniformity Device Fingerprint System</p>
+
+                <p class="cover-description">
+                    åºäºå¾åä¼ æå¨åªå£°æ¨¡å¼çè®¾å¤è¯å«ææ?br>
+                    éè¿åæå¾åä¼ æå¨ç PRNU ç¹å¾ï¼å®ç°è®¾å¤çº§æº¯æºåçä¼ªé´å?                </p>
+
+                <div class="cover-features">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span>é«ç²¾åº¦è®¾å¤è¯å?/span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span>å¤å¾åæçº¹èå?/span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span>å®æ¶æ¯å¯¹åæ</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span>å¯è§åç»æå±ç¤?/span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- å³ä¾§ï¼è¿å¥æé?-->
+            <div class="cover-right">
+                <button class="enter-btn" onclick="enterSystem()">
+                    <span>è¿å¥ç³»ç»</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- è½®æ­æç¤ºå?-->
+        <div class="slideshow-indicators">
+            <span class="indicator active" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="indicator" data-index="2"></span>
+            <span class="indicator" data-index="3"></span>
+            <span class="indicator" data-index="4"></span>
+        </div>
+    </div>
+
+    <!-- ä¸»ç³»ç»é¡µé¢ï¼åå§éèï¼?-->
+    <div id="mainSystem" class="main-system" style="display: none;">
+        <div class="container">
+            <header>
+                <h1>PRNU è®¾å¤æçº¹æº¯æºç³»ç»</h1>
+                <p class="subtitle">Photo Response Non-Uniformity Device Fingerprint System</p>
+            </header>
+
+            <main>
+                <div class="status-bar" id="statusBar">
+                    <span class="status-item">
+                        <span class="status-label">åèå¾å?</span>
+                        <span id="refCount">0</span> å¼?                    </span>
+                    <span class="status-item">
+                        <span class="status-label">å¾æµå¾å:</span>
+                        <span id="testImageCountBar">0</span> å¼?                    </span>
+                    <span class="status-item">
+                        <span class="status-label">ç³»ç»ç¶æ?</span>
+                        <span id="systemStatus" class="status-ready">
+                            <span class="status-dot"></span>å°±ç»ª
+                        </span>
+                    </span>
+                    <button class="btn-reset" onclick="resetSystem()">éç½®ç³»ç»</button>
+                </div>
+
+                <div class="main-content">
+                    <section class="panel upload-panel">
+                        <h2>1. ä¸ä¼ åèå¾å?/h2>
+                        <p class="panel-desc">ä¸ä¼ æ¥èªåä¸è®¾å¤çå¤å¼ å¾åä»¥æåè®¾å¤æçº¹</p>
+                        <div class="upload-area" id="referenceUploadArea">
+                            <input type="file" id="referenceFiles" multiple accept="image/*" hidden>
+                            <div class="upload-placeholder" onclick="event.stopPropagation(); document.getElementById('referenceFiles').click()">
+                                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
+                                <p>ç¹å»æææ½ä¸ä¼ åèå¾å?/p>
+                                <p class="upload-tip">æ¯æ PNG, JPG, BMP, TIFF, WebP æ ¼å¼ï¼å¯å¤é?/p>
+                            </div>
+                            <div class="file-list" id="referenceFileList"></div>
+                        </div>
+                        <button class="btn-primary" id="uploadRefBtn" onclick="uploadReference()">
+                            å¼å§ä¸ä¼ åèå¾å?                        </button>
+                    </section>
+
+                    <section class="panel upload-panel">
+                        <h2>2. ä¸ä¼ å¾æµå¾å</h2>
+                        <p class="panel-desc">ä¸ä¼ éè¦æº¯æºçå¾æ£æµå¾åï¼æ¯ææ¹éä¸ä¼ ï¼?/p>
+                        <div class="upload-area" id="testUploadArea">
+                            <input type="file" id="testFile" multiple accept="image/*" hidden>
+                            <div class="upload-placeholder" onclick="event.stopPropagation(); document.getElementById('testFile').click()">
+                                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21 15 16 10 5 21"/>
+                                </svg>
+                                <p>ç¹å»æææ½ä¸ä¼ å¾æµå¾å?/p>
+                                <p class="upload-tip">æ¯æ PNG, JPG, BMP, TIFF, WebP æ ¼å¼ï¼å¯å¤é?/p>
+                            </div>
+                            <div class="file-list" id="testFileList"></div>
+                        </div>
+                        <button class="btn-primary" id="uploadTestBtn" onclick="uploadTest()">
+                                å¼å§ä¸ä¼ å¾æµå¾å?                            </button>
+                    </section>
+                </div>
+
+                <section class="panel compare-panel">
+                    <h2>3. æ§è¡æ¯å¯¹</h2>
+                    <p class="panel-desc">æ¹éæ¯å¯¹ææå¾æµå¾åï¼å¹¶éå¼ æ¥çè¯¦ç»åæç»æ</p>
+                    <div class="compare-actions">
+                        <button class="btn-compare" id="compareBtn" onclick="compareBatch()">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10m-6 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m0 0V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/>
+                            </svg>
+                            æ¹éæ¯å¯¹
+                        </button>
+                    </div>
+                    <div class="batch-result-summary" id="batchResultSummary" style="display: none;">
+                        <div class="summary-header">
+                            <h3>æ¹éæ¯å¯¹ç»ææ±æ?/h3>
+                            <span class="summary-total">å?<span id="totalCompareCount">0</span> å¼ å¾å?/span>
+                        </div>
+                        <div class="summary-stats">
+                            <div class="stat-card stat-match">
+                                <span class="stat-label">é«åº¦å¹é</span>
+                                <span class="stat-value" id="excellentCount">0</span>
+                            </div>
+                            <div class="stat-card stat-good">
+                                <span class="stat-label">ä¸­åº¦å¹é</span>
+                                <span class="stat-value" id="goodCount">0</span>
+                            </div>
+                            <div class="stat-card stat-fair">
+                                <span class="stat-label">ä½åº¦å¹é</span>
+                                <span class="stat-value" id="fairCount">0</span>
+                            </div>
+                            <div class="stat-card stat-poor">
+                                <span class="stat-label">ä¸å¹é?/span>
+                                <span class="stat-value" id="poorCount">0</span>
+                            </div>
+                        </div>
+                        <div class="result-list" id="resultList"></div>
+                    </div>
+                </section>
+
+                <section class="panel result-panel" id="resultPanel" style="display: none;">
+                    <h2>æ¯å¯¹ç»æ</h2>
+                    <div class="result-content">
+                        <!-- ç»æè¯´æ -->
+                        <div class="result-description">
+                            <p class="result-desc-text">
+                                æ¬ç³»ç»éè¿åæå¾åä¸­ç PRNUï¼åååºéååæ§ï¼åªå£°æ¨¡å¼æ¥è¯å«ææè®¾å¤ã?                                æ¯å¼ å¾çé½åå«ç±ç¸æºä¼ æå¨å¶é è¿ç¨ä¸­äº§ççç¬ç¹åªå£°å¾æ¡ï¼è¿ç§å¾æ¡å¦åè®¾å¤ç?æçº¹"ä¸æ ·å·æå¯ä¸æ§ã?                                ç³»ç»éè¿æåå¹¶æ¯å¯¹è¿ç§åªå£°æ¨¡å¼æ¥å¤æ­ä¸¤å¼ å¾çæ¯å¦æ¥èªåä¸è®¾å¤ã?                            </p>
+                        </div>
+
+                        <!-- SVG æ¸åå®ä¹ -->
+                        <svg width="0" height="0" style="position: absolute;">
+                            <defs>
+                                <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="scoreGradientExcellent" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="scoreGradientGood" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#047857;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="scoreGradientFair" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#d97706;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="scoreGradientPoor" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ea580c;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="scoreGradientVeryPoor" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#b91c1c;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle" id="scoreCircle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                </svg>
+                                <div class="score-value" id="scoreValue">0</div>
+                            </div>
+                            <div class="score-label">ç¸ä¼¼åº¦åæ?/div>
+                            <div class="score-explanation">
+                                <p><strong>å«ä¹ï¼?/strong>è¡¨ç¤ºå¾æµå¾åä¸åèå¾åæçº¹çå¹éç¨åº¦ï¼åæ°è¶é«è¡¨ç¤ºä¸¤èè¶å¯è½æ¥èªåä¸è®¾å¤ã?/p>
+                                <p><strong>è¯åæ åï¼?/strong>80 åä»¥ä¸ä¸ºé«åº¦å¹éï¼?5-79 åä¸ºä¸­åº¦å¹éï¼?5-64 åä¸ºä½åº¦å¹éï¼?5 åä»¥ä¸ä¸ºä¸å¹éã?/p>
+                            </div>
+                        </div>
+
+                        <div class="result-details">
+                            <div class="detail-item">
+                                <span class="detail-label">ç½®ä¿¡åº?/span>
+                                <span class="detail-value" id="confidenceValue">-</span>
+                                <span class="detail-explanation">
+                                    <strong>å«ä¹ï¼?/strong>è¡¨ç¤ºç³»ç»å¯¹å½åæ¯å¯¹ç»æçå¯ä¿¡ç¨åº¦è¯ä¼°ã?br>
+                                    <strong>è¯´æï¼?/strong>ç½®ä¿¡åº¦è¶é«ï¼æ¥è¿ 100%ï¼ï¼è¡¨ç¤ºç»æè¶å¯é ï¼ä½äº 50% æ¶å»ºè®®è°¨æåèã?                                </span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">åèå¾åæ°</span>
+                                <span class="detail-value" id="refImageCount">-</span>
+                                <span class="detail-explanation">
+                                    <strong>å«ä¹ï¼?/strong>ç¨äºçæåèæçº¹çå¾çæ°éã?br>
+                                    <strong>è¯´æï¼?/strong>åèå¾åè¶å¤ï¼çæçæçº¹è¶åç¡®ï¼æ¯å¯¹ç»æè¶å¯é ãå»ºè®®è³å°ä½¿ç?3-5 å¼ å¾çã?                                </span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">å¤å®ç­çº§</span>
+                                <span class="detail-value" id="scoreCategory">-</span>
+                                <span class="detail-explanation">
+                                    <strong>å«ä¹ï¼?/strong>æ ¹æ®ç¸ä¼¼åº¦åæ°ååçå¹éç­çº§ã?br>
+                                    <strong>ç­çº§è¯´æï¼?/strong>é«åº¦å¹éï¼åä¸è®¾å¤ï¼ãä¸­åº¦å¹éï¼å¯è½åä¸è®¾å¤ï¼ãä½åº¦å¹éï¼æ æ³ç¡®å®ï¼ãä¸å¹éï¼ä¸åè®¾å¤ï¼ã?                                </span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">ç½®ä¿¡ç­çº§</span>
+                                <span class="detail-value" id="confidenceLevel">-</span>
+                                <span class="detail-explanation">
+                                    <strong>å«ä¹ï¼?/strong>å¯¹ç½®ä¿¡åº¦çå®æ§æè¿°ã?br>
+                                    <strong>ç­çº§è¯´æï¼?/strong>é«ï¼>80%ï¼å¯ä¿¡ãä¸­ï¼?0%-80%ï¼åºæ¬å¯ä¿¡ãä½ï¼?50%ï¼éè°¨æå¤æ­ã?                                </span>
+                            </div>
+                        </div>
+
+                        <div class="conclusion" id="conclusion">
+                            <h3>å¤å®ç»è®º</h3>
+                            <p id="conclusionText">-</p>
+                            <p class="conclusion-explanation">
+                                <strong>è¯´æï¼?/strong>ç³»ç»æ ¹æ®ç¸ä¼¼åº¦åæ°èªå¨çæçå¤å®ç»è®ºã?                                "é«åº¦å¹é - åä¸è®¾å¤"è¡¨ç¤ºå¾æµå¾åä¸åèå¾åæå¯è½æ¥èªåä¸å°ææè®¾å¤ï¼
+                                "ä¸å¹é?- ä¸åè®¾å¤"è¡¨ç¤ºå¾æµå¾åå¾å¯è½æ¥èªå¶ä»è®¾å¤ã?                            </p>
+                        </div>
+
+                        <div class="recommendation" id="recommendation">
+                            <h3>åæå»ºè®®</h3>
+                            <p id="recommendationText">-</p>
+                            <p class="recommendation-explanation">
+                                <strong>è¯´æï¼?/strong>æ ¹æ®å½åæ¯å¯¹ç»æç»åºçä¸ä¸å»ºè®®ï¼åæ¬æ¯å¦éè¦è¡¥åå¾çã?                                æ¯å¦éè¦ç»åå¶ä»è¯æ®ç»¼åå¤æ­ç­æå¯¼æè§ã?                            </p>
+                        </div>
+
+                        <!-- ç¸ä¼¼ä½ç½®å¯è§å?-->
+                        <div class="similarity-visualization" id="similarityViz">
+                            <h3>ç¸ä¼¼ä½ç½®å¯è§å?/h3>
+                            <p class="viz-desc">
+                                ä¸å¾å±ç¤ºäºå¾æµå¾åä¸åèæçº¹é«åº¦ç¸ä¼¼çåºåï¼å¾ä¸­æ©çº¢è²åï¼ã?                                PRNU åªå£°æ¨¡å¼å¨å¾åçç©ºé´åå¸ä¸å·æå¯ä¸æ§ï¼æ©çº¢è²åºåè¡¨ç¤ºè¿äºä½ç½®çåªå£°æ¨¡å¼ä¸åèæçº¹é«åº¦ä¸è´ï¼
+                                æ¯å¤æ­ä¸¤å¼ å¾çæ¯å¦æ¥èªåä¸è®¾å¤çå³é®è¯æ®ãæ æ³¨çæ°å­åºå·è¡¨ç¤ºç¸ä¼¼åº¦æé«çå?10 ä¸ªåºåã?                            </p>
+                            <div class="viz-container">
+                                <div class="viz-overlay-wrapper">
+                                    <canvas id="similarityCanvas"></canvas>
+                                    <img id="testImageOverlay" class="viz-base-image" alt="å¾æµå¾å" />
+                                </div>
+                                <div class="viz-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">æ»åæ?                                            <span class="stat-tooltip" title="å¾åè¢«åå²æç?8Ã8 åç´ å°åæ»æ°ï¼ç¨äºç¹å¾æååæ¯å¯¹">?</span>
+                                        </span>
+                                        <span class="stat-value" id="totalBlocks">-</span>
+                                        <span class="stat-explanation">å°?512Ã512 çå¾ååå²æ 8Ã8 çå°åï¼æ¯ä¸ªå°åæåä¸ä¸?PRNU ç¹å¾åé</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">é«ç¸ä¼¼å
+                                            <span class="stat-tooltip" title="ç¸ä¼¼åº¦è¶è¿ä¸­ä½æ°çåæ°éï¼è¿äºåçåªå£°æ¨¡å¼é«åº¦ä¸è?>?</span>
+                                        </span>
+                                        <span class="stat-value" id="highSimBlocks">-</span>
+                                        <span class="stat-explanation">ç¸ä¼¼åº¦è¶è¿?50% åä½æ°çåæ°éï¼è¿äºåºåçåªå£°æ¨¡å¼ä¸åèæçº¹é«åº¦å»å?/span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">å¹³åç¸ä¼¼åº?                                            <span class="stat-tooltip" title="ææå¾ååçä½å¼¦ç¸ä¼¼åº¦å¹³åå¼ï¼åæ æ´ä½å¹éç¨åº¦">?</span>
+                                        </span>
+                                        <span class="stat-value" id="avgSimilarity">-</span>
+                                        <span class="stat-explanation">ææå¾ååä½å¼¦ç¸ä¼¼åº¦çå¹³åå¼ï¼åæ æ´ä½å¹éæ°´å¹³ï¼éå¸¸å?1%-3% ä¹é´</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">æé«ç¸ä¼¼åº¦
+                                            <span class="stat-tooltip" title="ææå¾ååä¸­çæé«ç¸ä¼¼åº¦å¼ï¼åæ æä½³å¹éä½ç½?>?</span>
+                                        </span>
+                                        <span class="stat-value" id="maxSimilarity">-</span>
+                                        <span class="stat-explanation">ææå¾ååä¸­æé«çä½å¼¦ç¸ä¼¼åº¦å¼ï¼è¡¨ç¤ºæä½³å¹éä½ç½®çç¸ä¼¼ç¨åº¦</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <p>PRNU è®¾å¤æçº¹æº¯æºç³»ç» Â© 2026 | åºäºå¾åä¼ æå¨åªå£°æ¨¡å¼çè®¾å¤è¯å«ææ?/p>
+            </footer>
+        </div>
+
+        <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p id="loadingText">å¤çä¸?..</p>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    <script src="/static/cover.js"></script>
+</body>
+</html>

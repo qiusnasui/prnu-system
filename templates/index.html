@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRNU 设备指纹溯源系统</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- 封面页面 -->
+    <div id="coverPage" class="cover-page">
+        <!-- 背景图片轮播 -->
+        <div class="slideshow-container">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1920&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80')"></div>
+        </div>
+
+        <!-- 遮罩层 -->
+        <div class="cover-overlay"></div>
+
+        <!-- 封面内容 -->
+        <div class="cover-content">
+            <!-- 左侧：标题、描述、特性 -->
+            <div class="cover-left">
+                <div class="cover-logo">
+                    <svg viewBox="0 0 120 120" width="120" height="120">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="10" y="10" width="100" height="100" rx="20" fill="none" stroke="url(#logoGradient)" stroke-width="3"/>
+                        <circle cx="60" cy="45" r="12" fill="none" stroke="url(#logoGradient)" stroke-width="2.5"/>
+                        <path d="M25 75 Q35 65 45 75 Q55 85 65 75 Q75 65 85 75 Q95 85 95 75" fill="none" stroke="url(#logoGradient)" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="35" cy="35" r="3" fill="url(#logoGradient)"/>
+                        <circle cx="85" cy="35" r="3" fill="url(#logoGradient)"/>
+                        <circle cx="35" cy="85" r="3" fill="url(#logoGradient)"/>
+                        <circle cx="85" cy="85" r="3" fill="url(#logoGradient)"/>
+                    </svg>
+                </div>
+
+                <h1 class="cover-title">PRNU 设备指纹溯源系统</h1>
+                <p class="cover-subtitle">Photo Response Non-Uniformity Device Fingerprint System</p>
+
+                <p class="cover-description">
+                    基于图像传感器噪声模式的设备识别技术<br>
+                    通过分析图像传感器的 PRNU 特征，实现设备级溯源和真伪鉴别
+                </p>
+
+                <div class="cover-features">
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span>高精度设备识别</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span>多图像指纹融合</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span>实时比对分析</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <span>可视化结果展示</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：进入按钮 -->
+            <div class="cover-right">
+                <button class="enter-btn" onclick="enterSystem()">
+                    <span>进入系统</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 轮播指示器 -->
+        <div class="slideshow-indicators">
+            <span class="indicator active" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="indicator" data-index="2"></span>
+            <span class="indicator" data-index="3"></span>
+            <span class="indicator" data-index="4"></span>
+        </div>
+    </div>
+
+    <!-- 主系统页面（初始隐藏） -->
+    <div id="mainSystem" class="main-system" style="display: none;">
+        <div class="container">
+            <header>
+                <h1>PRNU 设备指纹溯源系统</h1>
+                <p class="subtitle">Photo Response Non-Uniformity Device Fingerprint System</p>
+            </header>
+
+            <main>
+                <div class="status-bar" id="statusBar">
+                    <span class="status-item">
+                        <span class="status-label">参考图像:</span>
+                        <span id="refCount">0</span> 张
+                    </span>
+                    <span class="status-item">
+                        <span class="status-label">待测图像:</span>
+                        <span id="testImageCountBar">0</span> 张
+                    </span>
+                    <span class="status-item">
+                        <span class="status-label">系统状态:</span>
+                        <span id="systemStatus" class="status-ready">
+                            <span class="status-dot"></span>就绪
+                        </span>
+                    </span>
+                    <button class="btn-reset" onclick="resetSystem()">重置系统</button>
+                </div>
+
+                <div class="main-content">
+                    <section class="panel upload-panel">
+                        <h2>1. 上传参考图像</h2>
+                        <p class="panel-desc">上传来自同一设备的多张图像以提取设备指纹</p>
+                        <div class="upload-area" id="referenceUploadArea">
+                            <input type="file" id="referenceFiles" multiple accept="image/*" hidden>
+                            <div class="upload-placeholder" onclick="event.stopPropagation(); document.getElementById('referenceFiles').click()">
+                                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
+                                <p>点击或拖拽上传参考图像</p>
+                                <p class="upload-tip">支持 PNG, JPG, BMP, TIFF, WebP 格式，可多选</p>
+                            </div>
+                            <div class="file-list" id="referenceFileList"></div>
+                        </div>
+                        <button class="btn-primary" id="uploadRefBtn" onclick="uploadReference()">
+                            开始上传参考图像
+                        </button>
+                    </section>
+
+                    <section class="panel upload-panel">
+                        <h2>2. 上传待测图像</h2>
+                        <p class="panel-desc">上传需要溯源的待检测图像（支持批量上传）</p>
+                        <div class="upload-area" id="testUploadArea">
+                            <input type="file" id="testFile" multiple accept="image/*" hidden>
+                            <div class="upload-placeholder" onclick="event.stopPropagation(); document.getElementById('testFile').click()">
+                                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21 15 16 10 5 21"/>
+                                </svg>
+                                <p>点击或拖拽上传待测图像</p>
+                                <p class="upload-tip">支持 PNG, JPG, BMP, TIFF, WebP 格式，可多选</p>
+                            </div>
+                            <div class="file-list" id="testFileList"></div>
+                        </div>
+                        <button class="btn-primary" id="uploadTestBtn" onclick="uploadTest()">
+                            开始上传待测图像
+                        </button>
+                    </section>
+                </div>
+
+                <section class="panel compare-panel">
+                    <h2>3. 执行比对</h2>
+                    <p class="panel-desc">批量比对所有待测图像，并逐张查看详细分析结果</p>
+                    <div class="compare-actions">
+                        <button class="btn-compare" id="compareBtn" onclick="compareBatch()">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10m-6 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m0 0V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/>
+                            </svg>
+                            批量比对
+                        </button>
+                    </div>
+                    <div class="batch-result-summary" id="batchResultSummary" style="display: none;">
+                        <div class="summary-header">
+                            <h3>批量比对结果汇总</h3>
+                            <span class="summary-total">共<span id="totalCompareCount">0</span> 张图像</span>
+                        </div>
+                        <div class="summary-stats">
+                            <div class="stat-card stat-match">
+                                <span class="stat-label">高度匹配</span>
+                                <span class="stat-value" id="excellentCount">0</span>
+                            </div>
+                            <div class="stat-card stat-good">
+                                <span class="stat-label">中度匹配</span>
+                                <span class="stat-value" id="goodCount">0</span>
+                            </div>
+                            <div class="stat-card stat-fair">
+                                <span class="stat-label">低度匹配</span>
+                                <span class="stat-value" id="fairCount">0</span>
+                            </div>
+                            <div class="stat-card stat-poor">
+                                <span class="stat-label">不匹配</span>
+                                <span class="stat-value" id="poorCount">0</span>
+                            </div>
+                        </div>
+                        <div class="image-grid" id="imageGrid"></div>
+                        <div class="batch-nav">
+                            <button class="batch-nav-btn" onclick="prevImage()">上一张</button>
+                            <span class="batch-nav-info">第 <span id="currentImageIndex">1</span> / <span id="totalImages">0</span> 张</span>
+                            <button class="batch-nav-btn" onclick="nextImage()">下一张</button>
+                        </div>
+                        <div class="result-list" id="resultList"></div>
+                    </div>
+                </section>
+
+                <section class="panel result-panel" id="resultPanel" style="display: none;">
+                    <h2>比对结果详情</h2>
+                    <div class="result-content">
+                        <!-- 结果说明 -->
+                        <div class="result-description">
+                            <p class="result-desc-text">
+                                本系统通过分析图像中的 PRNU（光响应非均匀性）噪声模式来识别拍摄设备。
+                                每张图片都包含由相机传感器制造过程中产生的独特噪声图案，这种图案如同设备的"指纹"一样具有唯一性。
+                                系统通过提取并比对这种噪声模式来判断两张图片是否来自同一设备。
+                            </p>
+                        </div>
+
+                        <!-- SVG 渐变定义 -->
+                        <svg width="0" height="0" style="position: absolute;">
+                            <defs>
+                                <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="scoreGradientExcellent" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="scoreGradientGood" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#047857;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="scoreGradientFair" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#d97706;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="scoreGradientPoor" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ea580c;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="scoreGradientVeryPoor" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#b91c1c;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle" id="scoreCircle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                </svg>
+                                <div class="score-value" id="scoreValue">0</div>
+                            </div>
+                            <div class="score-label">相似度分数</div>
+                            <div class="score-explanation">
+                                <p><strong>含义：</strong>表示待测图像与参考图像指纹的匹配程度，分数越高表示两者越可能来自同一设备。</p>
+                                <p><strong>评分标准：</strong>80 分以上为高度匹配，65-79 分为中度匹配，45-64 分为低度匹配，45 分以下为不匹配。</p>
+                            </div>
+                        </div>
+
+                        <div class="result-details">
+                            <div class="detail-item">
+                                <span class="detail-label">置信度</span>
+                                <span class="detail-value" id="confidenceValue">-</span>
+                                <span class="detail-explanation">
+                                    <strong>含义：</strong>表示系统对当前比对结果的可信程度评估。<br>
+                                    <strong>说明：</strong>置信度越高（接近 100%），表示结果越可靠；低于 50% 时建议谨慎参考。
+                                </span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">参考图像数</span>
+                                <span class="detail-value" id="refImageCount">-</span>
+                                <span class="detail-explanation">
+                                    <strong>含义：</strong>用于生成参考指纹的图片数量。<br>
+                                    <strong>说明：</strong>参考图像越多，生成的指纹越准确，比对结果越可靠。建议至少使用 3-5 张图片。
+                                </span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">判定等级</span>
+                                <span class="detail-value" id="scoreCategory">-</span>
+                                <span class="detail-explanation">
+                                    <strong>含义：</strong>根据相似度分数划分的匹配等级。<br>
+                                    <strong>等级说明：</strong>高度匹配（同一设备）、中度匹配（可能同一设备）、低度匹配（无法确定）、不匹配（不同设备）。
+                                </span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">置信等级</span>
+                                <span class="detail-value" id="confidenceLevel">-</span>
+                                <span class="detail-explanation">
+                                    <strong>含义：</strong>对置信度的定性描述。<br>
+                                    <strong>等级说明：</strong>高（>80%）可信、中 (50%-80%) 基本可信、低 (<50%) 需谨慎判断。
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="conclusion" id="conclusion">
+                            <h3>判定结论</h3>
+                            <p id="conclusionText">-</p>
+                            <p class="conclusion-explanation">
+                                <strong>说明：</strong>系统根据相似度分数自动生成的判定结论。
+                                "高度匹配 - 同一设备"表示待测图像与参考图像极可能来自同一台拍摄设备；
+                                "不匹配 - 不同设备"表示待测图像很可能来自其他设备。
+                            </p>
+                        </div>
+
+                        <div class="recommendation" id="recommendation">
+                            <h3>分析建议</h3>
+                            <p id="recommendationText">-</p>
+                            <p class="recommendation-explanation">
+                                <strong>说明：</strong>根据当前比对结果给出的专业建议，包括是否需要补充图片、
+                                是否需要结合其他证据综合判断等指导意见。
+                            </p>
+                        </div>
+
+                        <!-- 相似位置可视化 -->
+                        <div class="similarity-visualization" id="similarityViz">
+                            <h3>相似位置可视化</h3>
+                            <p class="viz-desc">
+                                下图展示了待测图像与参考指纹的相似区域分布。
+                                PRNU 噪声模式在图像的空间分布上具有唯一性，颜色越偏橙红色表示该位置的噪声模式与参考指纹越一致，
+                                是判断两张图片是否来自同一设备的关键证据。金色标记标注相似度最高的前 10 个区域。
+                            </p>
+                            <div class="viz-container">
+                                <div class="viz-image-section">
+                                    <div class="viz-overlay-wrapper">
+                                        <canvas id="similarityCanvas"></canvas>
+                                        <img id="testImageOverlay" class="viz-base-image" alt="待测图像" />
+                                    </div>
+                                </div>
+                                <div class="viz-info-section">
+                                    <div class="similarity-legend" id="similarityLegend"></div>
+                                    <div class="viz-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">总块数
+                                            <span class="stat-tooltip" title="图像被分割成的 8×8 像素小块总数，用于特征提取和比对">?</span>
+                                        </span>
+                                        <span class="stat-value" id="totalBlocks">-</span>
+                                        <span class="stat-explanation">将 512×512 的图像分割成 8×8 的小块，每个小块提取一个 PRNU 特征向量</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">高相似块
+                                            <span class="stat-tooltip" title="相似度超过中位数的块数量，这些块的噪声模式高度一致">?</span>
+                                        </span>
+                                        <span class="stat-value" id="highSimBlocks">-</span>
+                                        <span class="stat-explanation">相似度超过 50% 分位数的块数量，这些区域的噪声模式与参考指纹高度吻合</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">平均相似度
+                                            <span class="stat-tooltip" title="所有图像块的余弦相似度平均值，反映整体匹配程度">?</span>
+                                        </span>
+                                        <span class="stat-value" id="avgSimilarity">-</span>
+                                        <span class="stat-explanation">所有图像块余弦相似度的平均值，反映整体匹配水平，通常在 1%-3% 之间</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">最高相似度
+                                            <span class="stat-tooltip" title="所有图像块中的最高相似度值，反映最佳匹配位置">?</span>
+                                        </span>
+                                        <span class="stat-value" id="maxSimilarity">-</span>
+                                        <span class="stat-explanation">所有图像块中最高的余弦相似度值，表示最佳匹配位置的相似程度</span>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </main>
+
+            <footer>
+                <p>PRNU 设备指纹溯源系统 © 2026 | 基于图像传感器噪声模式的设备识别技术</p>
+            </footer>
+        </div>
+
+        <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p id="loadingText">处理中...</p>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+    <script src="/static/cover.js"></script>
+</body>
+</html>
